@@ -1,0 +1,3 @@
+<?
+
+define('TITLE', "Inkly's");
