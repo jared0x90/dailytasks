@@ -10,4 +10,5 @@ define('MONGO_USER', 'inkly');
 define('MONGO_PASS', 'archon23051');
 define('MONGO_PORT', '27747');
 define('MONGO_PATH', '/inkly');
+define('MONGO_DBNAME', 'inkly');
 
