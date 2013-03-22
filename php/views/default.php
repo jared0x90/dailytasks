@@ -12,5 +12,17 @@
       <h1>Inkly's</h1>
       <h2>Your source for toner &amp; ink</h2>
     </div>
+    <div class="navigation">
+      <a href="">Ink</a> |
+      <a href="">Toner</a>
+    </div>
+    <hr>
+    <div class="main">
+      Welcome to Inkly's.
+    </div>
+    <hr>
+    <div class="footer">
+      &copy; <?= date('Y') ?>
+    </div>
   </body>
 </html>

@@ -5,7 +5,9 @@
 define('PATH_MASTER', dirname(__FILE__)); 
 define('PATH_PHP', PATH_MASTER . '/php');
 define('PATH_VIEWS', PATH_PHP . '/views');
-define('DEBUGGING', (isset($_GET['debug'])));
+
+require PATH_PHP . "/config.php";
+
 
 # Decide whether to use AJAX handler or action/view handler
 

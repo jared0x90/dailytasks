@@ -16,6 +16,18 @@ body {
 
 .header{
   text-align: center;
-  background-color: #666;
-  
+  background-color: #666; 
+}
+
+.navigation{
+  text-align: center;
+}
+
+.footer{
+  text-align: center;
+  color: #ccc;
+}
+
+a {
+  color: #fff;
 }
