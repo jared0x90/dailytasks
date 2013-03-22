@@ -14,9 +14,25 @@ body {
   margin: auto;
 }
 
+
+a {
+  color: #fff;
+}
+
+a:hover{
+  color: #afa
+}
+
 .header{
   text-align: center;
   background-color: #666; 
+}
+
+.main{
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: justify;
+  color: #ede; 
 }
 
 .navigation{
@@ -26,8 +42,4 @@ body {
 .footer{
   text-align: center;
   color: #ccc;
-}
-
-a {
-  color: #fff;
 }
