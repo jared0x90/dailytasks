@@ -1,12 +1,17 @@
 <?
+# Copyright 2013 Jared De Blander
 
+# Define our master path
 
-# Retrieve our path. Returns with no trailing slash. IE /srv/inklys.com
-define('PATH_MASTER', dirname(__FILE__)); 
-define('PATH_PHP',    PATH_MASTER . '/php');
-define('PATH_VIEWS',  PATH_PHP . '/views');
+define('PATH_MASTER', dirname(__FILE__) . '/'); 
 
-require PATH_PHP . "/config.php";
+# Include configuration file
+
+require PATH_MASTER . "php/config.php";
+
+# Include ancillary files
+
+require PATH_PHP . "manifest.php";
 
 # Create connection to mongo database
 
@@ -17,48 +22,68 @@ try{
   die ('Database connection failed.');
 }
 
-#######################
-# begin test mongo code
-#######################
-echo "<h2>Collections</h2>";
-echo "<ul>";
+# Start AJAX, Action, View handler
 
-// print out list of collections
-$cursor = $db->listCollections();
-$collection_name = "";
-foreach( $cursor as $doc ) {
-  echo "<li>" .  $doc->getName() . "</li>";
-  $collection_name = $doc->getName();
-}
-echo "</ul>";
-#######################
-# end test mongo code
-#######################  
-
-# Decide whether to use AJAX handler or action/view handler
-
-if(isset($_REQUEST['ajax'])){
-  # Begin AJAX handler  
-  
-  # TODO Write AJAX Hanlder
-  
-  # End AJXAX handler
-}else{
-  # Begin action/view hanlder
-  # Action handler
-  if(isset($_REQUEST['action'])){
-    
+try{
+  # Sanitize ajax,action,view handler
+  if(isset($_REQUEST['ajax'])){
+    $sanitize_ajax = string_filter_alphanum($_REQUEST['ajax']);
+    if($sanitize_ajax == $_REQUEST['ajax']){
+      define('REQUESTED_AJAX', $sanitize_ajax);
+    }else{
+      # Close Mongo connection
+      $m->close();
+      
+    }
   }
   
-  # View handler
+  if(isset($_REQUEST['action'])){
+    $sanitize_action = string_filter_alphanum($_REQUEST['action']);
+    if($sanitize_action == $_REQUEST['action']){
+      define('REQUESTED_ACTION', $sanitize_action);
+    }
+  }
+  
   if(isset($_REQUEST['view'])){
+    $sanitize_view = string_filter_alphanum($_REQUEST['view']);
+    if($sanitize_view == $_REQUEST['view']){
+      define('REQUESTED_VIEW', $sanitize_view);
+    }
+  }
+  
+  if(defined('REQUESTED_AJAX')){
+    # Begin AJAX handler  
     
   }else{
-    require(PATH_VIEWS . '/default.php');  
-  }
-  # End action view hanlder
+    # Begin action/view hanlder
+    # Action handler
+    if(defined('REQUESTED_ACTION')){
+      
+    }
+    
+    # View handler
+    
+    if(defined('REQUESTED_VIEW')){
+      $view_file = PATH_VIEWS . REQUESTED_VIEW . '.php';
+      if(file_exists($view_file)){
+        require $view_file;
+      }else{
+        # Attempt to close MongoConnection
+        $m->close();
+        # Die
+        die('Invalid view specified.');        
+      }
+    }else{
+      require(PATH_VIEWS . '/default.php');
+    }
+    # End action view hanlder
+  }  
+}catch( Exception $e ){
+  # Attempt to close MongoConnection
+  $m->close();
+  # Die
+  die('Failure in request handler.');
 }
 
 # Close Mongo connection
 $m->close();
-
