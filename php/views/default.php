@@ -8,7 +8,9 @@
   </head>
   <body>
     <!-- page content -->
-    <h1>Inkly's</h1>
-    <h2>Your source for toner &amp; ink</h2>
+    <div class="header">
+      <h1>Inkly's</h1>
+      <h2>Your source for toner &amp; ink</h2>
+    </div>
   </body>
 </html>

@@ -4,3 +4,18 @@
 * { font-family: 'Gabriela', serif; }
 
 
+html {
+  background-color: #444;  
+}
+
+body {
+  background-color: #555;
+  width: 800px;
+  margin: auto;
+}
+
+.header{
+  text-align: center;
+  background-color: #666;
+  
+}
