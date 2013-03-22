@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Inkly's - Your source for toner and ink!</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="script.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <!-- page content -->
