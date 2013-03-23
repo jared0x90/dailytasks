@@ -2,7 +2,7 @@
     </div>
     <hr>
     <div class="footer">
-      &copy; <?= date('Y') ?>
+      <?= link_create_url('/?view=about', "About Us") ?> |  &copy; <?= date('Y') ?>
     </div>
   </body>
 </html>
