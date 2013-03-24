@@ -6,11 +6,16 @@ echo "<h2>Collections</h2>";
 echo "<ul>";
 
 // print out list of collections
-$cursor = $db->listCollections();
-$collection_name = "";
-foreach( $cursor as $doc ) {
-  echo "<li>" .  $doc->getName() . "</li>";
-  $collection_name = $doc->getName();
+$collections = $db->listCollections();
+
+foreach( $collections as $collection ) {
+  echo "<li>" .  $collection->getName() . "<ul>" ;
+  
+  $documents = $collection->find();
+  foreach($documents as $document){
+    echo '<li>'. nl2br(str_replace(' ', '&nbsp;', print_r($document,true))).'</li>';       
+  }
+  echo "</ul></li>";
 }
 echo "</ul>";
 
