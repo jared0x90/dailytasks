@@ -4,7 +4,7 @@
     <!-- META -->
     <meta charset="utf-8">
     <!-- HTML -->
-    <title>Inkly's - Ink, toner and a better world</title>
+    <title>Daily Task Lists - Keeping you on track</title>
     <!-- JS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- CSS -->

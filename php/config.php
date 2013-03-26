@@ -15,12 +15,12 @@ define('PATH_TEMPLATES', PATH_PHP . 'templates/');
 # Mongo Database Configuration
 ################################################################################
 # Complete URL
-define('MONGO_URL',  'mongodb://inkly:archon23051@dbh74.mongolab.com:27747/inkly');
+define('MONGO_URL',  'mongodb://dailytasksadmin:i2HgOnAJKCPE79iYp@ds031947.mongolab.com:31947/dailytasks');
 # Individual settings
-define('MONGO_HOST', 'dbh74.mongolab.com');
-define('MONGO_USER', 'inkly');
-define('MONGO_PASS', 'archon23051');
-define('MONGO_PORT', '27747');
-define('MONGO_PATH', '/inkly');
-define('MONGO_DBNAME', 'inkly');
+define('MONGO_HOST', 'ds031947.mongolab.com');
+define('MONGO_USER', 'dailytasksadmin');
+define('MONGO_PASS', 'i2HgOnAJKCPE79iYp');
+define('MONGO_PORT', '31947');
+define('MONGO_PATH', '/dailytasks');
+define('MONGO_DBNAME', 'dailytasks');
 
