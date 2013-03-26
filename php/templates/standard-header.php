@@ -14,14 +14,7 @@
   <body>
     <!-- page content -->
     <div class="header">
-      <h1><a href="/">Inkly's</a></h1>
-      <h2>Ink, toner &amp; a better world</h2>
+      <h1><a href="/">Daily Task Lists</a></h1>
+      <h2>Keeping you on track</h2>
     </div>
-    <div class="navigation">
-      <a href="">HP Ink</a> |
-      <a href="">Canon Ink</a> |
-      <a href="">Brother Ink</a> |
-      <a href="">HP Toner</a>
-    </div>
-    <hr>
     <div class="main">

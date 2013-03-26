@@ -5,34 +5,33 @@
 
 
 html {
-  background-color: #444;  
+  background-color: #fff; 
 }
 
 body {
-  background-color: #555;
   width: 800px;
   margin: auto;
 }
 
 
 a {
-  color: #fff;
+  color: #00c;
+  text-decoration: none;
 }
 
 a:hover{
-  color: #afa
+  color: #44f;
 }
 
 .header{
   text-align: center;
-  background-color: #666; 
 }
 
 .main{
   margin-left: 10px;
   margin-right: 10px;
   text-align: justify;
-  color: #ede; 
+  color: #333; 
 }
 
 .navigation{
@@ -40,6 +39,7 @@ a:hover{
 }
 
 .footer{
+  margin-top: 200px;
   text-align: center;
   color: #ccc;
 }
