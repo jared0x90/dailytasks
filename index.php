@@ -58,6 +58,15 @@ try{
     # Begin action/view hanlder
     # Action handler
     if(defined('REQUESTED_ACTION')){
+      $action_file = PATH_ACTIONS . REQUESTED_ACTION '.php.';
+      if(file_exists($action_file)){
+        require $action_file;
+      }else{
+        # Attempt to close MongoConnection
+        $m->close();
+        # Die
+        die('Invalid action specified.');        
+      }      
       
     }
     

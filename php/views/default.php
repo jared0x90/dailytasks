@@ -13,7 +13,7 @@
           <input type="hidden" name="action"   value="signup">
           <input type="hidden" name="view"     value="signup">
           <input type="text"   name="email"    placeholder="your@email.com"><br>
-          <?= show_recaptcha(true); ?><br>
+          <?= recaptcha_show(true); ?><br>
           <input type="submit" value="Sign Up">
         </form>
    
