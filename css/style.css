@@ -43,3 +43,8 @@ a:hover{
   text-align: center;
   color: #ccc;
 }
+
+#recaptcha_area
+{
+    margin: 0 auto;
+}
