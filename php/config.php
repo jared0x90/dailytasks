@@ -35,3 +35,8 @@ define('COLLECTION_USERS', 'users');
 ################################################################################
 define('RECAPTCHA_PUBLIC_KEY',  '6Led-d4SAAAAAIRWE537Vt6Z9chDcTzcU_EmzcNY');
 define('RECAPTCHA_PRIVATE_KEY', '6Led-d4SAAAAAPVfC_j91RognFzTi5X9_ehkV-19');
+
+################################################################################
+# Misc. Constants
+################################################################################
+define('SHA1_KEYLENGTH', 40);

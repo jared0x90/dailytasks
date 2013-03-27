@@ -12,17 +12,28 @@ if(! recaptcha_valid()){
     if( ! filter_var($_REQUEST['email'], FILTER_VALIDATE_EMAIL)){
       $signup_error_reason = LANGUAGE_SIGNUP_BAD_EMAIL;
     }else{
-      # User signed up properly.
-      $signup_error = false;
+      # Appears user signed up properly. Check for existing account.
+
       
       $users = $db->selectCollection(COLLECTION_USERS);
       
-      $users->insert(
-        array(
-          'email' => $_REQUEST['email'], 
-          'validation_key' => sha1($_REQUEST['email'] . microtime(true) . rand() . rand())       
-        )
-      );
+      $user_result = $users->findOne(array('email' => $_REQUEST['email']));
+      
+      # TODO: Send emails
+      if($user_result){
+        $signup_error_reason = LANGUAGE_SIGNUP_EMAIL_ALREADY_EXISTS;
+      }else{
+        $signup_error = false;
+        
+        $validation_key = sha1($_REQUEST['email'] . microtime(true) . rand() . rand());
+        
+        $users->insert(
+          array(
+            'email' => $_REQUEST['email'], 
+            'validation_key' => $validation_key    
+          )
+        );
+      }
     }
   }
 }

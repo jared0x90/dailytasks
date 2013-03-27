@@ -5,7 +5,7 @@
 
 
 html {
-  background-color: #eee; 
+  background-color: #fff; 
 }
 
 body {
@@ -22,6 +22,11 @@ a {
 
 a:hover{
   color: #44f;
+}
+
+input{
+  font-size: 16px;
+  width: 300px;
 }
 
 .header{
