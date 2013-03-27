@@ -58,7 +58,7 @@ try{
     # Begin action/view hanlder
     # Action handler
     if(defined('REQUESTED_ACTION')){
-      $action_file = PATH_ACTIONS . REQUESTED_ACTION '.php.';
+      $action_file = PATH_ACTIONS . REQUESTED_ACTION . '.php';
       if(file_exists($action_file)){
         require $action_file;
       }else{
@@ -66,8 +66,7 @@ try{
         $m->close();
         # Die
         die('Invalid action specified.');        
-      }      
-      
+      }
     }
     
     # View handler

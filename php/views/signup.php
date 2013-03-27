@@ -1,5 +1,21 @@
-<? render_template('standard-header'); ?>
+<? render_template('standard-header'); 
 
-<?= nl2br(print_r($_POST, true)); ?>
+if(! isset($signup_error)){
+  # User did not complete form properly as the signup action was not processed
+  echo 'Invalid sign-up detected.';
+}else{
+  if ($signup_error){
+    # User failed to complete the singup process properly.
+    echo $signup_error_reason;
 
-<? render_template('standard-footer'); 
+  }else{ 
+    # User succeeded in completing the signup process.
+    ?>
+    <h3>Greetings fellow homo-sapien</h3>
+    <p>Check your email to complete the registration process!</p>
+    <?
+  }
+}
+
+
+render_template('standard-footer'); 

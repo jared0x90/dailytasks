@@ -9,6 +9,7 @@ define('PATH_JS',        PATH_MASTER . 'css/');
 
 define('PATH_ACTIONS',   PATH_PHP . 'actions/');
 define('PATH_FUNCTIONS', PATH_PHP . 'functions/');
+define('PATH_LANGUAGES', PATH_PHP . 'languages/');
 define('PATH_LIBS',      PATH_PHP . 'libs/');
 define('PATH_TEMPLATES', PATH_PHP . 'templates/');
 define('PATH_VIEWS',     PATH_PHP . 'views/');

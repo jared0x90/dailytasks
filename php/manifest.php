@@ -8,3 +8,6 @@ require PATH_FUNCTIONS . 'recaptcha.php';
 
 # Libraries
 require PATH_LIBS . 'recaptchalib.php'; 
+
+# Languages
+require PATH_LANGUAGES . 'english.php';
