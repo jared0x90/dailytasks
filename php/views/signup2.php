@@ -11,8 +11,16 @@ if(! isset($signup_error)){
   }else{ 
     # User succeeded in completing the signup process.
     ?>
-    <h3>Well, hello there</h3>
+    <h3>Well, hello there <?= $user_result['email'] ?></h3>
     <p>It's time to choo-choo-choose your password!</p>
+    <form method="POST" action="/">
+      <input type="hidden"   name="action" value="signup3">
+      <input type="hidden"   name="view"   value="signup3">
+      <input type="hidden"   name="key"    value="<?= $user_result['key']; ?>">
+      <input type="password" placeholder="your password"       name="password"><br>
+      <input type="password" placeholder="your password again" name="password_confirm"><br>
+      <input type="submit" value="Complete Account Creation">
+    </form>
     <?
   }
 }

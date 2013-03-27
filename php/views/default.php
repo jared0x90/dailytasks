@@ -9,7 +9,7 @@
           <input type="submit"   value="Login">
         </form>     
         
-        <h3>Sign Up</h3>
+        <h3>Alpha Sign Up</h3>
         <form action="/" method="POST">
           <input type="hidden" name="action"   value="signup">
           <input type="hidden" name="view"     value="signup">
