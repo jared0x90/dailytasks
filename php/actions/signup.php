@@ -19,9 +19,15 @@ if(! recaptcha_valid()){
       
       $user_result = $users->findOne(array('email' => $_REQUEST['email']));
       
-      # TODO: Send emails
+
       if($user_result){
-        $signup_error_reason = LANGUAGE_SIGNUP_EMAIL_ALREADY_EXISTS;
+        # User already exists
+        if(isset($user_result['validation_key'])){
+          $signup_error_reason = LANGUAGE_SIGNUP_EMAIL_ALREADY_EXISTS;
+          mail($_REQUEST['email'], 'DailyTaskLists.com - Create your account (Resent Email)', "You or someone claiming to be you has registered for an account on DailyTaskLists.com and has requested we resend your account setup email.\n\nTo complete account creation please visit the following URL:\n\nhttp://www.dailytasklists.com/?view=signup2&action=signup2&key=".$user_result['validation_key']);
+        }else{
+          $signup_error_reason = LANGUAGE_SIGNUP_ALREADY_ACTIVATED;
+        }
       }else{
         $signup_error = false;
         
@@ -31,8 +37,9 @@ if(! recaptcha_valid()){
           array(
             'email' => $_REQUEST['email'], 
             'validation_key' => $validation_key    
-          )
+          ) 
         );
+        mail($_REQUEST['email'], 'DailyTaskLists.com - Create your account', "You or someone claiming to be you has registered for an account on DailyTaskLists.com.\n\nTo complete account creation please visit the following URL:\n\nhttp://www.dailytasklists.com/?view=signup2&action=signup2&key=".$validation_key);
       }
     }
   }
