@@ -27,6 +27,8 @@ define('MONGO_PASS', 'i2HgOnAJKCPE79iYp');
 define('MONGO_PORT', '31947');
 define('MONGO_PATH', '/dailytasks');
 define('MONGO_DBNAME', 'dailytasks');
+# Collections
+define('COLLECTION_USERS', 'users');
 
 ################################################################################
 # Recaptcha configuration
