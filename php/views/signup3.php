@@ -6,6 +6,7 @@ if(! isset($signup_error)){
 }else{
   if ($signup_error){
     # User failed to complete the singup process properly.
+    echo "<h3>Sorry</h3>";
     echo $signup_error_reason;
 
   }else{ 

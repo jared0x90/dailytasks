@@ -13,4 +13,7 @@ define('LANGUAGE_SIGNUP2_BAD_KEY_LENGTH', '<p>It appears your key is an improper
 define('LANGUAGE_SIGNUP2_BAD_KEY_NOT_FOUND', '<p>We were unable to locate a key for your account. Please check the URL.</p>');
 
 
+define('LANGUAGE_SIGNUP3_NO_PASSWORDS', '<p>We did not receive your password entires, please try again.</p>');
+define('LANGUAGE_SIGNUP3_PASSWORD_MISMATCH', '<p>The passwords you submitted do not match.</p>');
+define('LANGUAGE_SIGNUP3_PASSWORD_LENGTH', '<p>Your password is too long. Please enter a shorter password.</p>');
 
