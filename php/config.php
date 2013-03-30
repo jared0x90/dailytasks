@@ -40,3 +40,4 @@ define('RECAPTCHA_PRIVATE_KEY', '6Led-d4SAAAAAPVfC_j91RognFzTi5X9_ehkV-19');
 # Misc. Constants
 ################################################################################
 define('SHA1_KEYLENGTH', 40);
+define('SHA1_PASSWORD_SALT', 'eTmGTejaxyAmlp251bqZzy7YCYEhZr777CFQv6p3JEvFCpO7u1SQAQWgHFbyEldeRmmsWtQ');

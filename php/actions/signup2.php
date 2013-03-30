@@ -18,8 +18,8 @@ if(!isset($_REQUEST['key'])){
       $users = $db->selectCollection(COLLECTION_USERS);
       $user_result = $users->findOne(array('validation_key' => $request_key_input));
       if($user_result){
+        # yay, we found what we were looking for
         $signup_error = false;
-        $signup_error_reason = nl2br(print_r($user_result, true));
       }else{
         $signup_error_reason = LANGUAGE_SIGNUP2_BAD_KEY_NOT_FOUND;
       }
