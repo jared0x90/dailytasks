@@ -16,7 +16,7 @@ if(! isset($signup_error)){
     <form method="POST" action="/">
       <input type="hidden"   name="action" value="signup3">
       <input type="hidden"   name="view"   value="signup3">
-      <input type="hidden"   name="key"    value="<?= $user_result['key']; ?>">
+      <input type="hidden"   name="key"    value="<?= $user_result['validation_key']; ?>">
       <input type="password" placeholder="your password"       name="password"><br>
       <input type="password" placeholder="your password again" name="password_confirm"><br>
       <input type="submit" value="Complete Account Creation">

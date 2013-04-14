@@ -5,6 +5,8 @@
 $signup_error = true;
 $signup_error_reason = '';
 
+var_dump($_REQUEST);
+
 if((! isset($_REQUEST['password']))  || (! isset($_REQUEST['password_confirm']))){
   $signup_error_reason = LANGUAGE_SIGNUP3_NO_PASSWORDS;
 }else{
