@@ -40,6 +40,8 @@ if((! isset($_REQUEST['password']))  || (! isset($_REQUEST['password_confirm']))
               $user_result['password'] = calculate_password_hash($_REQUEST['password']);
               unset($user_result['validation_key']);
               $user_result['quick_view_key'] = quickview_key_create();
+
+              $mongo_result = $users->save($user_result);
             }else{
               $signup_error_reason = LANGUAGE_SIGNUP2_BAD_KEY_NOT_FOUND;
             }
