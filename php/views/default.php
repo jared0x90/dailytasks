@@ -3,7 +3,6 @@
         <h3>Login</h3>
         <form action="/" method="POST">
           <input type="hidden"   name="action"   value="login">
-          <input type="hidden"   name="view"     value="home">
           <input type="text"     name="email"    placeholder="your@email.com"><br>
           <input type="password" name="password" placeholder="your password"><br>
           <input type="submit"   value="Login">

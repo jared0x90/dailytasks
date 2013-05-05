@@ -22,6 +22,10 @@ try{
   die ('Database connection failed.');
 }
 
+# Start session 
+
+session_start();
+
 # Start AJAX, Action, View handler
 
 try{
@@ -79,10 +83,14 @@ try{
         # Attempt to close MongoConnection
         $m->close();
         # Die
-        die('Invalid view specified.');        
+        die('Invalid view specified.');
       }
     }else{
-      require(PATH_VIEWS . '/default.php');
+      if(logged_in()){
+        require(PATH_VIEWS . '/home.php');
+      }else{
+        require(PATH_VIEWS . '/default.php');
+      }
     }
     # End action view hanlder
   }  
