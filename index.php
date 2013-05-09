@@ -17,7 +17,13 @@ require PATH_PHP . "manifest.php";
 
 try{
   $m  = new MongoClient(MONGO_URL);
-  $db = $m->selectDB(MONGO_DBNAME);
+  $db = $m->selectDB(
+    MONGO_DBNAME, 
+    array(
+      "replicaSet" => "rs0", 
+      "readPreference" => MongoClient::RP_SECONDARY_PREFERRED
+    )
+  );
 }catch( Exception $e ){
   die ('Database connection failed.');
 }
