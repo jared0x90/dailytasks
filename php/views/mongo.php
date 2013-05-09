@@ -13,7 +13,7 @@ foreach( $collections as $collection ) {
   
   $documents = $collection->find();
   foreach($documents as $document){
-    echo '<li>'. nl2br(str_replace(' ', '&nbsp;', print_r($document,true))).'</li>';       
+    if(! isset($_REQUEST['hide'])) echo '<li>'. nl2br(str_replace(' ', '&nbsp;', print_r($document,true))).'</li>';       
   }
   echo "</ul></li>";
 }

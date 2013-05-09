@@ -16,14 +16,13 @@ require PATH_PHP . "manifest.php";
 # Create connection to mongo database
 
 try{
-  $m  = new MongoClient(MONGO_URL);
-  $db = $m->selectDB(
-    MONGO_DBNAME, 
+  $m  = new MongoClient(MONGO_URL,
     array(
       "replicaSet" => "rs0", 
       "readPreference" => MongoClient::RP_SECONDARY_PREFERRED
     )
   );
+  $db = $m->selectDB(MONGO_DBNAME);
 }catch( Exception $e ){
   die ('Database connection failed.');
 }
