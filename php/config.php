@@ -19,14 +19,23 @@ define('PATH_VIEWS',     PATH_PHP . 'views/');
 # Mongo Database Configuration
 ################################################################################
 # Complete URL
-define('MONGO_URL',  'mongodb://dailytasksadmin:i2HgOnAJKCPE79iYp@ds031947.mongolab.com:31947/dailytasks');
+# define('MONGO_URL',  'mongodb://dailytasksadmin:i2HgOnAJKCPE79iYp@ds031947.mongolab.com:31947/dailytasks');
+define('MONGO_URL',         'mongodb://mongo1.jwd.me,mongo2.jwd.me,mongo3.jwd.me/?replicaSet=rs0');
+# define('MONGO_REPLICA_SET', 'rs0');
+define('MONGO_DBNAME',      'dailytasks');
+
+
 # Individual settings
+/* 
+
 define('MONGO_HOST', 'ds031947.mongolab.com');
 define('MONGO_USER', 'dailytasksadmin');
 define('MONGO_PASS', 'i2HgOnAJKCPE79iYp');
 define('MONGO_PORT', '31947');
 define('MONGO_PATH', '/dailytasks');
 define('MONGO_DBNAME', 'dailytasks');
+
+*/
 # Collections
 define('COLLECTION_USERS', 'users');
 

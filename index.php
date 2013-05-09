@@ -16,7 +16,7 @@ require PATH_PHP . "manifest.php";
 # Create connection to mongo database
 
 try{
-  $m  = new Mongo(MONGO_URL);
+  $m  = new MongoClient(MONGO_URL);
   $db = $m->selectDB(MONGO_DBNAME);
 }catch( Exception $e ){
   die ('Database connection failed.');
@@ -97,8 +97,9 @@ try{
 }catch( Exception $e ){
   # Attempt to close MongoConnection
   $m->close();
+
   # Die
-  die('Failure in request handler.');
+  die('Failure in request handler: <p>' . $e->getMessage().'</p>');
 }
 
 # Close Mongo connection
